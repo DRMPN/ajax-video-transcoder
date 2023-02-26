@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Upload
+{% endblock %}
+
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#upload_file").click(function (e) {
+            $.ajax({
+                url: "/upload",
+                type: "POST",
+                data: new FormData($("#upform")[0]),
+                contentType: false,
+                cache: false,
+                processData: false,
+                beforeSend: function () {
+                    // something
+                },
+                success: function (data) {
+                    // callback
+                },
+                error: function (e) {
+                    // handle error
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+
+{% block main %}
+<div class="row p-4">
+    <div class="col"></div>
+
+    <div class="col">
+        <div class="p-4 border border-info rounded" style="background-color: rgba(91,192,222,0.1);">
+            <p class="text-center font-weight-bold text-info">Upload your video</p>
+            <form action="/upload" method="post" id="upform" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input name="file" type="file" class="form-control p-1" id="upfile" />
+                </div>
+                <button class="btn btn-info" type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col"></div>
+</div>
+
+{% if loadurl %}
+<div class="row p-4">
+    <div class="col"></div>
+
+    <div class="col">
+        <div class="p-4 border border-info rounded" style="background-color: rgba(91,192,222,0.1);">
+            <p class="text-center font-weight-bold text-info">Download your video</p>
+            <a href={{loadurl}} class="btn btn-info" type="submit" download="file">Download</a>
+        </div>
+    </div>
+
+    <div class="col"></div>
+</div>
+{% endif %}
+
+{% endblock %}

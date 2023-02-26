@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+Hello :)
+{% endblock %}
+
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#gotoreg").click(function (e) {
+            $("#logform").addClass("d-none");
+            $("#reglink").addClass("d-none");
+
+            $("#regform").removeClass("d-none");
+            $("#loglink").removeClass("d-none");
+        });
+
+        $("#gotolog").click(function (e) {
+            $("#regform").addClass("d-none");
+            $("#loglink").addClass("d-none");
+
+            $("#logform").removeClass("d-none");
+            $("#reglink").removeClass("d-none");
+        });
+    });
+</script>
+{% endblock %}
+
+
+{% block main %}
+<div class="row">
+    <div class="col"></div>
+
+    <div class="col">
+        <div class="p-4 border border-success rounded-pill" id="logform" style="background-color: rgba(92,184,92,0.1);">
+            <p class="text-center font-weight-bold text-success">Sign in</p>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username"
+                        type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="password" placeholder="Password" type="password">
+                </div>
+                <button class="btn btn-success" type="submit">Sign in</button>
+            </form>
+        </div>
+
+        <div class="p-4 border border-success d-none rounded-pill" id="regform"
+            style="background-color: rgba(92,184,92,0.1);">
+            <p class="text-center font-weight-bold text-success">Sign up</p>
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username"
+                        type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="password" placeholder="Password" type="password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="confirmation" placeholder="Confirm" type="password">
+                </div>
+                <button class="btn btn-success" type="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col"></div>
+</div>
+
+{% endblock %}
