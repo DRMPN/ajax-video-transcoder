@@ -79,6 +79,7 @@ def register():
         )
         if len(username_db_query) == 0:
             if request.form.get("password") == request.form.get("confirmation"):
+                flash("Registered!", "success")
                 db.execute(
                     "INSERT INTO users (username, hash) VALUES (?,?)",
                     request.form.get("username"),
@@ -90,7 +91,7 @@ def register():
         else:
             flash("Username is already exists", "danger")
             return render_template("hello.html")
-        return redirect("/")
+        return render_template("hello.html")
 
 
 @app.route("/login", methods=["POST"])
