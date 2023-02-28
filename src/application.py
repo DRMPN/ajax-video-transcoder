@@ -57,7 +57,7 @@ app.add_url_rule("/uploads/<name>", endpoint="download_file", build_only=True)
 @app.route("/hello", methods=["GET"])
 def hello():
     """Show Login/Register form"""
-    if not session:
+    if not session.get("user_id"):
         return render_template("hello.html")
     else:
         return redirect("/")
@@ -69,10 +69,10 @@ def register():
     if request.method == "POST":
         if not request.form.get("username"):
             flash("Username field can't be blank", "danger")
-            return render_template("hello.html")
+            return redirect("/hello")
         if not request.form.get("password") or not request.form.get("confirmation"):
             flash("Password field can't be blank", "danger")
-            return render_template("hello.html")
+            return redirect("/hello")
         username_db_query = db.execute(
             "SELECT username FROM users WHERE username = ?",
             request.form.get("username"),
@@ -87,11 +87,12 @@ def register():
                 )
             else:
                 flash("Passwords do not match", "danger")
-                return render_template("hello.html")
+                return redirect("/hello")
         else:
             flash("Username is already exists", "danger")
-            return render_template("hello.html")
-        return render_template("hello.html")
+            return redirect("/hello")
+
+        return redirect("/")
 
 
 @app.route("/login", methods=["POST"])
@@ -102,10 +103,10 @@ def login():
     if request.method == "POST":
         if not request.form.get("username"):
             flash("Must provide username", "danger")
-            return render_template("hello.html")
+            return redirect("/hello")
         elif not request.form.get("password"):
             flash("Must provide password", "danger")
-            return render_template("hello.html")
+            return redirect("/hello")
 
         rows = db.execute(
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
@@ -115,7 +116,7 @@ def login():
             rows[0]["hash"], request.form.get("password")
         ):
             flash("Invalid username and/or password", "danger")
-            return render_template("hello.html")
+            return redirect("/hello")
 
         session["user_id"] = rows[0]["id"]
 
