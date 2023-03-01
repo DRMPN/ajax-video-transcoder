@@ -1,0 +1,8 @@
+version: "1.0"
+services:
+    ajax-video-transcoder:
+        build: .
+        volumes:
+            - .:/home/task
+        ports:
+            - "8080:8080"

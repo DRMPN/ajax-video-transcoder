@@ -1,6 +1,7 @@
 import logging
 import os
 import sys
+import time
 import traceback
 from pathlib import Path
 
@@ -24,10 +25,19 @@ URL = f"http://{IP}:{PORT}/hello"
 
 CWD = os.path.abspath(os.getcwd())
 CHECK_FILE = "small.webm"
+if not [x for x in Path(CWD).iterdir() if "small" in x.name]:
+    logging.error("No file to upload")
+    exit(102)
+else:
+    logging.info("Completed - Check file is found")
 
 logging.info(f"Recieved: IP - {IP}; PORT - {PORT}; COMMAND - {COMMAND}; URL - {URL}")
 
+time.sleep(3)
+logging.info("Sleeping 3 seconds")
+
 if COMMAND.lower() == "check":
+    logging.info("Begin check")
     try:
         firefox_options = Options()
         firefox_options.add_argument("--headless")
