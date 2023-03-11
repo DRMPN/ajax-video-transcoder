@@ -1,6 +1,5 @@
 def failing_function():
-    print("ABC")
-
+  print("ABC");
 
 def extra_failing_function():
     return 
