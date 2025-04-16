@@ -28,6 +28,15 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
+    """
+Adds headers to the response to disable caching.
+
+    Args:
+        response: The response object to modify.
+
+    Returns:
+        The modified response object with cache-control headers set.
+    """
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -140,6 +149,15 @@ def index():
 @app.route("/upload", methods=["POST"])
 @login_required
 def upload():
+    """
+Uploads a WebM file, converts it to MP4 using ffmpeg, and provides a download link.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     if not request.files.get("file").filename:
         flash("No file to upload", "danger")
         return redirect("/")
@@ -170,6 +188,16 @@ def upload():
 
 @app.route("/uploads/<name>")
 def download_file(name):
+    """
+Downloads a file.
+
+    Args:
+        name: The name of the file to download.
+
+    Returns:
+        None
+        Downloads the specified file from the upload folder and sends it to the client.
+    """
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
 
