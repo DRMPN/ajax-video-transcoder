@@ -8,7 +8,7 @@
 
 ## Overview
 
-ajax-video-transcoder is a secure web application that allows users to easily convert WebM videos to MP4. It provides a private and convenient way to transform video files, offering user authentication and a simple interface for uploading, processing, and downloading converted content.
+ajax-video-transcoder is a secure web application that simplifies video conversion. It allows users to privately transform WebM videos into the widely compatible MP4 format through an easy-to-use interface, ensuring convenient access and control over their files.
 
 ---
 
@@ -24,12 +24,12 @@ ajax-video-transcoder is a secure web application that allows users to easily co
 ---
 ## Core features
 
-1. **Video Transcoding**: Converts WebM video files to MP4 format using FFmpeg, providing a core functionality of the application.
+1. **Video Transcoding**: Converts WebM video files to MP4 format using FFmpeg, providing the core functionality of the application.
 2. **User Authentication**: Implements user registration and login with password hashing to secure access to the transcoding service.
 3. **File Upload Handling**: Allows users to upload WebM files through a web interface, including file extension validation for security and correct format.
 4. **File Download Functionality**: Enables users to download the converted MP4 video files via the web interface after successful transcoding.
-5. **Secure File Processing**: Utilizes temporary file storage and secure filename handling during the upload and transcoding process to prevent vulnerabilities.
-6. **Web Interface**: Provides a user-friendly web interface built with Flask for interacting with all application features, including uploading, monitoring, and downloading files.
+5. **Secure File Processing**: Utilizes temporary file storage and secure filename handling during upload and transcoding to prevent vulnerabilities.
+6. **Web Interface (Flask)**: Provides a user-friendly web interface built with Flask for interacting with all application features, including uploading, monitoring, and downloading files.
 
 ---
 
