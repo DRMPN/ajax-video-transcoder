@@ -1,4 +1,5 @@
-cs50
-Flask
-Flask-Session
-selenium
+cs50==9.4.0
+Flask==3.1.1
+flask_session==0.8.0
+selenium==4.34.2
+Werkzeug==3.1.3
