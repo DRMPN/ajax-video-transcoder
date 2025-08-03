@@ -63,6 +63,8 @@ If your contribution changes ajax-video-transcoder in any way:
 
 If your contribution involves any code changes:
 
+- Update the [project tests](https://github.com/DRMPN/ajax-video-transcoder/tree/master/tests) to test your code changes.
+
 - Make sure that your code is properly commented with [docstrings](https://peps.python.org/pep-0257/) and comments explaining your rationale behind non-obvious coding practices.
 
 ## Acknowledgements
