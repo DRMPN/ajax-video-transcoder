@@ -4,7 +4,7 @@
 
 ## Overview
 
-A secure web platform that simplifies converting WebM videos to MP4, offering authenticated access, real-time processing feedback, and an intuitive interface for seamless uploading and downloading, ensuring reliable and user-friendly video transcoding for authorized users.
+A secure and user-friendly web platform that enables authorized users to convert WebM videos to MP4 format with ease. It offers a seamless experience through real-time processing feedback, intuitive upload and download capabilities, and robust authentication, ensuring reliable video transcoding for individual users.
 
 ## Table of Contents
 
@@ -51,7 +51,6 @@ pip install -r requirements.txt
 
 DRMPN (2023). ajax-video-transcoder repository [Computer software]. https://github.com/DRMPN/ajax-video-transcoder
 
-```bibtex
 @misc{ajax-video-transcoder,
  author = {DRMPN},
  title = {ajax-video-transcoder repository},
@@ -61,4 +60,3 @@ DRMPN (2023). ajax-video-transcoder repository [Computer software]. https://gith
  howpublished = {\url{https://github.com/DRMPN/ajax-video-transcoder.git}},
  url = {https://github.com/DRMPN/ajax-video-transcoder.git}
 }
-```
