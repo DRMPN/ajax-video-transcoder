@@ -4,7 +4,7 @@
 
 ## Overview
 
-A secure and user-friendly web application that allows authorized users to convert WebM videos to MP4 format with a seamless interface, real-time feedback, and reliable file handling, ensuring a smooth and efficient transcoding experience.
+A secure and intuitive web platform that enables users to convert WebM videos to MP4 format with ease. It offers a seamless experience through real-time processing feedback, protected access via user authentication, and reliable file handling, making video conversion efficient and accessible for authorized users.
 
 ## Table of Contents
 
@@ -15,11 +15,11 @@ A secure and user-friendly web application that allows authorized users to conve
 
 ## Core features
 
-1. **User Authentication**: The application provides secure user authentication with registration and login functionality. Users must create a unique account and log in to access the transcoding features, ensuring that only authorized individuals can use the service. Passwords are securely hashed using industry-standard methods.
-2. **WebM to MP4 Video Transcoding**: The core functionality of the application is converting WebM video files to MP4 format using FFmpeg on the server side. The transcoding process includes specific encoding settings such as adjusting the frame rate to 24fps and generating proper timestamps to ensure high-quality output.
-3. **AJAX-Based File Upload**: The application uses AJAX to enable asynchronous file uploads, allowing users to submit WebM files without refreshing the page. This provides a seamless and responsive user experience with real-time feedback during the upload and processing stages.
-4. **File Upload and Download Interface**: A user-friendly web interface allows users to upload WebM files and download the resulting MP4 files after transcoding. The interface includes clear form controls, status messages, and direct download links for a smooth workflow.
-5. **Server-Side Validation and Error Handling**: The application performs server-side validation to ensure only WebM files are accepted for transcoding. It captures and displays FFmpeg errors in a user-friendly way, providing meaningful feedback when the conversion process fails due to file issues or encoding errors.
+1. **User Authentication**: The application provides secure user registration and login functionality, requiring users to create an account and log in before accessing transcoding features. Passwords are securely hashed using industry-standard methods to protect user credentials and ensure only authorized access.
+2. **WebM to MP4 Video Transcoding**: The core functionality enables server-side conversion of WebM video files to MP4 format using FFmpeg. The transcoding process applies specific encoding settings such as setting the frame rate to 24fps and generating proper timestamps to ensure high-quality output.
+3. **AJAX-Based File Upload**: The application uses AJAX to support asynchronous file uploads, allowing users to submit WebM files without page reloads. This provides a seamless user experience with real-time feedback during both upload and processing stages.
+4. **File Upload and Download Interface**: A user-friendly web interface enables users to upload WebM files and download the resulting MP4 files after transcoding. The interface includes intuitive form controls, status messages, and direct download links for efficient workflow management.
+5. **Server-Side Validation and Error Handling**: The application performs strict server-side validation to accept only WebM files for transcoding. It captures and displays FFmpeg errors in a user-friendly manner, providing clear feedback when conversion fails due to file issues or encoding problems.
 6. **Session Management**: User sessions are securely managed using Flask-Session with filesystem-based storage. Sessions are cleared upon logout and configured to prevent browser caching, enhancing security by protecting user authentication state and sensitive data.
 
 ## Installation
@@ -51,20 +51,14 @@ pip install -r requirements.txt
 
 DRMPN (2023). ajax-video-transcoder repository [Computer software]. https://github.com/DRMPN/ajax-video-transcoder
 
+```bibtex
 @misc{ajax-video-transcoder,
-
  author = {DRMPN},
-
  title = {ajax-video-transcoder repository},
-
  year = {2023},
-
  publisher = {github.com},
-
  journal = {github.com repository},
-
  howpublished = {\url{https://github.com/DRMPN/ajax-video-transcoder.git}},
-
  url = {https://github.com/DRMPN/ajax-video-transcoder.git}
-
 }
+```
