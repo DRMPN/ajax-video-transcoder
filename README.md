@@ -4,7 +4,7 @@
 
 ## Overview
 
-A secure and user-friendly web platform that simplifies the conversion of WebM videos to MP4 format. It offers authenticated access, real-time processing feedback, and a seamless interface for uploading and downloading files, ensuring efficient and reliable video transcoding for authorized users.
+A secure web platform that simplifies converting WebM videos to MP4, offering authenticated access, real-time processing feedback, and an intuitive interface for seamless uploading and downloading, ensuring reliable and user-friendly video transcoding for authorized users.
 
 ## Table of Contents
 
